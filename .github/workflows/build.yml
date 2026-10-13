@@ -20,10 +20,10 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Make gradlew executable and Build Debug APK
+    - name: Generate Gradle Wrapper and Build
       run: |
-        chmod +x gradlew
-        ./gradlew assembleDebug
+        gradle wrapper --gradle-version 8.5
+        ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
