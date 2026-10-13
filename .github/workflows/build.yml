@@ -20,8 +20,10 @@ jobs:
     - name: Setup Android SDK
       uses: android-actions/setup-android@v3
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
+    - name: Make gradlew executable and Build Debug APK
+      run: |
+        chmod +x gradlew
+        ./gradlew assembleDebug
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
