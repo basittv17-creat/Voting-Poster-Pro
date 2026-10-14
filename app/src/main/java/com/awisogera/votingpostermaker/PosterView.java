@@ -23,6 +23,10 @@ public class PosterView extends View {
 
     public PosterView(Context context) { super(context); }
 
+    public PosterView(Context context, android.util.AttributeSet attrs) {
+        super(context, attrs);
+    }
+
     public void setImageA(Uri uri) { imageA = loadBitmap(uri); invalidate(); }
     public void setImageB(Uri uri) { imageB = loadBitmap(uri); invalidate(); }
     public void addText(String value) { texts.add(new TextItem(value)); activeText = texts.size() - 1; invalidate(); }
